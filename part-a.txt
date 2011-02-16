@@ -1,0 +1,43 @@
+Part A, 10 points, deadline Friday 18 February 12:01
+
+Explain the format specified by customerName and give examples of accepted and rejected strings.
+Supply the missing XML Schema type for modifyItem and make itemDescription more precise (look for fixme in the file).
+Translate the completed XML Schema file into a DTD specification (as well as you can).
+You must hand in three files:
+The completed XML Schema cloud.xsd.
+The translated DTD specification cloud.dtd.
+A short documentation file partA.pdf, partA.doc or partA.txt that explains the customerName format, the choices you have made in specifying the modifyItem type, and the shortcomings of cloud.dtd compared to cloud.xsd.
+
+<element name="customerName" type="w:customerName"/>
+<simpleType name="customerName">
+<restriction base="w:simpleText">
+<minLength value="2"/>
+<maxLength value="20"/>
+</restriction>
+</simpleType>
+
+Answer 1:
+
+Looking at <element name="customerName" type="w:customerName"/> we see that the element is of type customerName (prefixed with out xml namespace "w"). That type is defined by
+<simpleType name="simpleText"> 
+		<restriction base="string"> 
+			<pattern value="(\p{L}|\p{N}|_|-|\.)*"></pattern> 
+		</restriction> 
+	</simpleType>
+We see here that is uses the base restriction from "string" and another restriction based on the regular expression /(\p{L}|\p{N}|_|-|\.)*/
+
+That regular expression matches "all alphabetical characters OR all numeric characters OR underscore OR dash OR dot and can be of length zero or more"
+
+SimpleType customerName has another restriction on minLength and maxLength.
+
+GOOD Examples:
+RasmusHummelmose
+rasmus
+12345678901234567890
+
+BAD EXAMPLES
+Rasmus Hummelmose // Whitespace
+A // Too short
+123456789012345678901 // Too long
+rasmus@hummelmose.dk // @ not allowed
+
