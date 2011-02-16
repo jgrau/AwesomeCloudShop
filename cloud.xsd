@@ -28,11 +28,11 @@
 	<complexType name="modifyItem"> 
 		<all> 
 			<element ref="w:itemID"/> 
-			<element ref="w:itemName"/> 
-			<element ref="w:itemURL"/> 
-			<element ref="w:itemPrice"/> 
-			<element ref="w:itemStock"/> 
-			<element ref="w:itemDescription"/> 
+			<element ref="w:itemName" minOccurs="0" /> 
+			<element ref="w:itemURL" minOccurs="0"/> 
+			<element ref="w:itemPrice" minOccurs="0"/> 
+			<element ref="w:itemStock" minOccurs="0"/> 
+			<element ref="w:itemDescription" minOccurs="0"/> 
 		</all>
 	</complexType> 
 	
