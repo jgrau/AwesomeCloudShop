@@ -4,4 +4,35 @@
 <!ELEMENT login (customerName, customerPass) >
 <!ELEMENT createItem (shopKey, itemName) >
 <!ELEMENT createCustomer (shopKey, customerName, customerPass) >
-<!ELEMENT createCustomerResponse (customerID, usernameTaken) >
+<!ELEMENT createCustomerResponse (customerID|usernameTaken) >
+<!ELEMENT saleResponse (ok|itemSoldOut|error)>
+<!ELEMENT loginResponse (customerID, customerName) >
+<!ELEMENT items (item*) >
+<!ELEMENT shops (shop*) >
+<!ELEMENT sales (sale*) >
+<!ELEMENT customers (customer*) >
+<!ELEMENT item (itemID, itemName, itemURL, itemPrice, itemStock, itemDescription) >
+<!ELEMENT shop (shopID, shopName, shopURL) >
+<!ELEMENT sale (saleTime, saleAmount, shopID, itemID, customerID, saleItemPrice) >
+<!ELEMENT customer (customerID, customerName) >
+<!ELEMENT customerName (#PCDATA)>
+<!ELEMENT customerPass (#PCDATA)>
+<!ELEMENT itemID (#PCDATA)>
+<!ELEMENT itemName (#PCDATA)>
+<!ELEMENT itemURL (#PCDATA)>
+<!ELEMENT itemPrice (#PCDATA)>
+<!ELEMENT itemStock (#PCDATA)>
+<!ELEMENT itemDescription (#PCDATA)>
+<!ELEMENT shopKey (#PCDATA)>
+<!ELEMENT shopID (#PCDATA)>
+<!ELEMENT shopName (#PCDATA)>
+<!ELEMENT shopURL (#PCDATA)>
+<!ELEMENT saleTime (#PCDATA)>
+<!ELEMENT saleAmount (#PCDATA)>
+<!ELEMENT customerID (#PCDATA)>
+<!ELEMENT saleItemPrice (#PCDATA)>
+<!ELEMENT adjustment (#PCDATA)>
+<!ELEMENT usernameTaken EMPTY>
+<!ELEMENT ok EMPTY>
+<!ELEMENT itemSoldOut EMPTY>
+<!ELEMENT error EMPTY>
