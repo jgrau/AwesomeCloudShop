@@ -27,6 +27,7 @@
 	<element name="modifyItem" type="w:modifyItem"/> 
 	<complexType name="modifyItem"> 
 		<all> 
+      <element ref="w:shopKey"/>
 			<element ref="w:itemID"/> 
 			<element ref="w:itemName" minOccurs="0" /> 
 			<element ref="w:itemURL" minOccurs="0"/> 
@@ -182,8 +183,7 @@
 	<element name="itemPrice" type="nonNegativeInteger"/> 
 	<element name="itemStock" type="nonNegativeInteger"/> 
 	<element name="itemDescription" type="string"> 
-          <any minOccurs="0"/> <!-- fixme: imprecise --> 
-        </element> 
+  </element> 
 	
 	<element name="shopKey" type="string"/> 
 	<element name="shopID" type="nonNegativeInteger"/> 
