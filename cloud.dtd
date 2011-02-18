@@ -1,0 +1,7 @@
+<!ELEMENT sellItems (shopKey, itemID, customerID, saleAmount) >
+<!ELEMENT adjustItemStock (shopKey, itemID, adjustment)>
+<!ELEMENT modifyItem (shopKey, itemID, itemName?, itemURL?, itemPrice?, itemStock?, itemDescription?) >
+<!ELEMENT login (customerName, customerPass) >
+<!ELEMENT createItem (shopKey, itemName) >
+<!ELEMENT createCustomer (shopKey, customerName, customerPass) >
+<!ELEMENT createCustomerResponse (customerID, usernameTaken) >
